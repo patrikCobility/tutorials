@@ -1,6 +1,6 @@
 [
   {
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   {
     "metadata": {
@@ -11,18 +11,190 @@
       {
         "activated": true,
         "metadata": {
+          "label": "Jobb"
+        },
+        "properties": {},
+        "children": [
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {},
+            "children": [
+              {
+                "activated": true,
+                "metadata": {
+                  "label": ""
+                },
+                "properties": {
+                  "active": "true"
+                },
+                "children": [
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "behavior": {
+                        "type": "uriPath",
+                        "value": "bts/tuto_city_manager.bt"
+                      },
+                      "inputParams": []
+                    },
+                    "children": [],
+                    "id": "71ca12f5-42dc-401d-98bc-e9175ba4fecd",
+                    "type": "embedded"
+                  },
+                  {
+                    "activated": true,
+                    "metadata": {
+                      "label": ""
+                    },
+                    "properties": {
+                      "destination": "",
+                      "op": {
+                        "type": "string",
+                        "value": ""
+                      }
+                    },
+                    "children": [],
+                    "id": "b8fd1059-d1a0-405a-9f0d-4d418636bd42",
+                    "type": "set"
+                  }
+                ],
+                "id": "ace151d1-0b9d-41b0-904a-85313a3bd4cf",
+                "type": "priority"
+              }
+            ],
+            "id": "bc061ea9-92b4-4751-98d6-e9a02988b60e",
+            "type": "random"
+          }
+        ],
+        "id": "3b38ca49-ef51-40b1-a531-fba2ca90454e",
+        "type": "sequence"
+      },
+      {
+        "activated": true,
+        "metadata": {
           "label": ""
         },
         "properties": {
-          "behavior": {
-            "type": "uriPath",
-            "value": "bts/tuto_city_manager.bt"
-          },
-          "inputParams": []
+          "statusCondition": "failsIfAnyFails",
+          "retryPolicy": "propagateToRunning"
         },
         "children": [],
-        "id": "71ca12f5-42dc-401d-98bc-e9175ba4fecd",
-        "type": "embedded"
+        "id": "29c9f8b1-f12f-487b-ab1e-3d0139baa8f4",
+        "type": "parallel"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "op1": {
+            "type": "boolean",
+            "value": "false"
+          },
+          "op2": {
+            "type": "boolean",
+            "value": "true"
+          },
+          "op": "=="
+        },
+        "children": [],
+        "id": "81eae9e7-d80a-4b40-83f6-fa010be30a06",
+        "type": "until"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "name": "Test",
+          "inputParams": [
+            {
+              "key": "a",
+              "type": "string",
+              "value": "b"
+            }
+          ],
+          "outputParams": [
+            {
+              "key": "c",
+              "type": "entityKnowledge",
+              "value": "d"
+            }
+          ]
+        },
+        "children": [],
+        "id": "c3c9a652-1993-4650-96ce-c9cb0cfac0a8",
+        "type": "action"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "op1": {
+            "type": "boolean",
+            "value": "true"
+          },
+          "op2": {
+            "type": "boolean",
+            "value": "true"
+          },
+          "op": "=="
+        },
+        "children": [],
+        "id": "02836e05-146f-4226-b7b5-36c1cf520cb7",
+        "type": "condition"
+      },
+      {
+        "activated": true,
+        "metadata": {
+          "label": ""
+        },
+        "properties": {
+          "op1": {
+            "type": "boolean",
+            "value": "true"
+          },
+          "op2": {
+            "type": "boolean",
+            "value": "true"
+          },
+          "op": "=="
+        },
+        "children": [
+          {
+            "activated": true,
+            "metadata": {
+              "label": ""
+            },
+            "properties": {
+              "behavior": {
+                "type": "uriPath",
+                "value": ""
+              },
+              "inputParams": [
+                {
+                  "type": "string",
+                  "value": ""
+                }
+              ]
+            },
+            "children": [],
+            "id": "c9ceb8f7-37d5-4730-a02d-af86e81a4e82",
+            "type": "embedded"
+          }
+        ],
+        "id": "d2fe9358-2ca8-45a3-8eb2-abc3e809f0a4",
+        "type": "condition"
       }
     ],
     "id": "89522791-cdec-4a0b-9496-7054a610ff4f"
